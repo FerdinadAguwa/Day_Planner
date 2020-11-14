@@ -2,7 +2,7 @@ var currentDay = $("#currentDay");
 var dateTime = moment(); 
 // currentTime
 console.log(dateTime);
-var textLocationEl = $("#textLocation");
+var textLocationEl = $("#textLocation").val();
 var saveButton = $(".saveBtn");
 textLocationEl=""
 
@@ -15,15 +15,17 @@ console.log(typeof(currentHour))
 
 saveButton.click(function() {
     var key = $(this).closest(".row").attr("id");
-    console.log(key);
+    // console.log(key);
   
     // get the text
-    var value =$("textarea").attr("id").value;
-    console.log(value)
+    // var value = $(this).parent("#textLocation").val();
+    var value = $(this).find('textarea[name="task"]').val();
+    // $("textarea").attr("id");
+    console.log('log: value ', value);
   
     // save to localStorage
     localStorage.setItem(key, value)
-    console.log(localStorage)
+    // console.log(localStorage)
   
   })
 
@@ -31,7 +33,6 @@ saveButton.click(function() {
 // Color blocks based on the past(grey) presesnt(red) and future(green) events!
 $(`.row`).each(function(){
     var rowTime = parseInt($(this).attr("id"))
-    // console.log(rowTime)
 
     if(rowTime < currentHour){
         $(this).addClass('past');
