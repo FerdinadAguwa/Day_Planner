@@ -2,6 +2,8 @@ var currentDay = $("#currentDay");
 var dateTime = moment(); 
 // currentTime
 console.log(dateTime);
+var textLocationEl = $("#textLocation");
+var saveButton = $(".saveBtn");
 
 
 
@@ -28,5 +30,8 @@ $(`.row`).each(function(){
     } 
 });
 
-
-
+ function plannerText(){
+     
+  
+       
+ }
