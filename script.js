@@ -1,10 +1,9 @@
 var currentDay = $("#currentDay");
 var dateTime = moment(); 
-// currentTime
 console.log(dateTime);
 var textLocationEl = $("#textLocation").val();
 var saveButton = $(".saveBtn");
-textLocationEl=""
+
 
 // Current day of the week
 $("#currentDay").append(` ${dateTime.format('dddd, MMMM Do')}`);
@@ -12,28 +11,20 @@ $("#currentDay").append(` ${dateTime.format('dddd, MMMM Do')}`);
 var currentHour = parseInt(moment().format("H"));
 console.log(typeof(currentHour))
 
-
+// on click the user will save the item written in the planner as well as store it in local storage
 saveButton.click(function() {
+    // get the key to place into local storage
     var key = $(this).closest(".row").attr("id");
-    // console.log(key);
   
     // get the text
-    // var value = $(this).parent("#textLocation").val();
-    var value = $(this).parent().siblings().find("#textLocation").val();
-    // $("textarea").attr("id");
-    console.log('log: value ', value);
+    var value = $(this).parent().siblings().find(".textLocation").val();
+
     // save to localStorage
     localStorage.setItem(key, value)
     // console.log(localStorage)
 
-    for (var i = 9; i < 18; i++) {
-        
-    }
+
   })
-
-
-
-
 
 
 // Color blocks based on the past(grey) presesnt(red) and future(green) events!
@@ -51,4 +42,17 @@ $(`.row`).each(function(){
     } 
 
 });
+
+// render the item to the dom after the user has refreshed the page
+
+$("#9").val(localStorage.getItem("9am"));
+$("#10").val(localStorage.getItem("10am"));
+$("#11").val(localStorage.getItem("11am"));
+$("#12").val(localStorage.getItem("12pm"));
+$("#13").val(localStorage.getItem("13pm"));
+$("#14").val(localStorage.getItem("14pm"));
+$("#15").val(localStorage.getItem("15pm"));
+$("#16").val(localStorage.getItem("16pm"));
+$("#17").val(localStorage.getItem("17pm"));
+
 
