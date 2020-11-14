@@ -1,5 +1,5 @@
 # homeWork_5
-# Ferdinad Aguwa - Calendar
+# Ferdinad Aguwa - Day Planner
 ## Description
 The goal of this planner is to help you keep up with every hour of your complex day at work. When the user opens up the page it allows him or her to see the current date. The user will then click the colomns in order to set an event. The columns are color cordinated and will change depending on the time. For the past time you should see grey. If the time is current then the user will see red otherwise the column will be green for all future events. On the click of the save button on the far right it will save the event and that event will be on the page so that he or she may revisit the task later. I hope you this helps in your everyday planning.
 
