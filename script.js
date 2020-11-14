@@ -9,7 +9,7 @@ textLocationEl=""
 // Current day of the week
 $("#currentDay").append(` ${dateTime.format('dddd, MMMM Do')}`);
 
-var currentHour = parseInt(moment().format("h"));
+var currentHour = parseInt(moment().format("H"));
 console.log(typeof(currentHour))
 
 
@@ -19,15 +19,21 @@ saveButton.click(function() {
   
     // get the text
     // var value = $(this).parent("#textLocation").val();
-    var value = $(this).find('textarea[name="task"]').val();
+    var value = $(this).parent().siblings().find("#textLocation").val();
     // $("textarea").attr("id");
     console.log('log: value ', value);
-  
     // save to localStorage
     localStorage.setItem(key, value)
     // console.log(localStorage)
-  
+
+    for (var i = 9; i < 18; i++) {
+        
+    }
   })
+
+
+
+
 
 
 // Color blocks based on the past(grey) presesnt(red) and future(green) events!
